@@ -1,0 +1,44 @@
+h1 {
+  color: #000014;
+}
+.class1 {
+  one: 1;
+}
+.class1 .class {
+  three: 3;
+}
+lazy-eval {
+  width: 100%;
+}
+lazy-eval-scope {
+  width: 9%;
+}
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: dotted 2px black;
+}
+#menu a {
+  color: #111;
+  border-top: dotted 1px black;
+  border-bottom: dotted 2px black;
+}
+.post a {
+  color: red;
+  border-top: dotted 1px black;
+  border-bottom: dotted 2px black;
+}
+#header {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.button {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+.some .selector div {
+  color-1: #008000;
+  color-2: #008000;
+  paddimg-2: 2;
+}

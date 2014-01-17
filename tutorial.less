@@ -1,0 +1,84 @@
+@nice-blue: #5b83ad;
+
+h1 {
+	color: @nice-blue - #999;
+}
+
+// nested variable. 
+@var: 0;
+.class1 {
+	@var: 1;
+	.class {
+		@var: 2;
+		three: @var;
+		@var: 3;
+	}
+	one: @var;
+}
+
+// lazy-eval
+lazy-eval {
+	width: @var;
+}
+
+@var: @a;
+@a: 9%;
+
+lazy-eval-scope {
+	width: @var;
+	@a: 9%;
+}
+
+@var: @a;
+@a: 100%;
+
+// Mixins
+.bordered {
+	border-top: dotted 1px black;
+	border-bottom: dotted 2px black;
+}
+
+#menu a {
+	color: #111;
+	.bordered;
+}
+
+.post a {
+	color: red;
+	.bordered;
+}
+
+// Parametric Mixins
+.border-radius (@radius: 5px) {
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+	border-radius: @radius;
+}
+
+#header {
+	.border-radius(4px);
+}
+
+.button {
+	.border-radius(6px);
+}
+
+// Mixins with Mulitple Parameters
+.mixin(@color) {
+	color-1: @color;
+}
+
+.mixin(@color; @padding:2) {
+	color-2: @color;
+	paddimg-2: @padding;
+}
+
+.mixin(@color; @padding; @margin:2) {
+	color-3:@color;
+	padding-3:@padding;
+	margin: @margin @margin @margin @margin;
+}
+
+.some .selector div {
+	.mixin(#008000);
+}
